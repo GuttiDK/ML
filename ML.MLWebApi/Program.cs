@@ -13,8 +13,11 @@ builder.Services.AddControllers();
 // Register services
 builder.Services.AddScoped<IPredictService, PredictService>();
 
+// Get the model file path from the MLTraining project
+var modelPath = Path.Combine(builder.Environment.ContentRootPath, "..", "ML.MLTraining", "MLModel1.mlnet");
+
 builder.Services.AddPredictionEnginePool<MLModel1.ModelInput, MLModel1.ModelOutput>()
-    .FromFile("MLModel1.mlnet");
+    .FromFile(modelPath);
 
 builder.Services.AddEndpointsApiExplorer();
 

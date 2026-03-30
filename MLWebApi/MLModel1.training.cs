@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
-using Microsoft.ML.Trainers.FastTree;
 
-namespace MLConsoleApp
+namespace ML_MLConsoleApp
 {
     public partial class MLModel1
     {
@@ -90,12 +89,9 @@ namespace MLConsoleApp
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Transforms.ReplaceMissingValues(@"id", @"id")      
-                                    .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"tweet",outputColumnName:@"tweet"))      
-                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"id",@"tweet"}))      
-                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"label",inputColumnName:@"label",addKeyValueAnnotationsAsText:false))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(binaryEstimator:mlContext.BinaryClassification.Trainers.FastForest(new FastForestBinaryTrainer.Options(){NumberOfTrees=4,NumberOfLeaves=4,FeatureFraction=1F,LabelColumnName=@"label",FeatureColumnName=@"Features"}),labelColumnName:@"label"))      
-                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
+            var pipeline = mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"tweet",outputColumnName:@"tweet")      
+                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"tweet"}))      
+                                    .Append(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(new LbfgsLogisticRegressionBinaryTrainer.Options(){L1Regularization=0.043287627F,L2Regularization=0.03125F,LabelColumnName=@"label",FeatureColumnName=@"Features"}));
 
             return pipeline;
         }

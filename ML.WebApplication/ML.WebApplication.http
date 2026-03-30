@@ -1,0 +1,6 @@
+@ML.WebApplication_HostAddress = http://localhost:5117
+
+GET {{ML.WebApplication_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

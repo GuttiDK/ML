@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "MLWebApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:57382;http://localhost:57383"
+    }
+  }
+}

@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="MLConsoleApp/MLConsoleApp.csproj" />
+  <Project Path="ML.MLTraining/ML.MLTraining.csproj" Id="7a5e84ff-1710-4061-89bc-e8ad4482fed9" />
+  <Project Path="ML.MLWebApi/ML.MLWebApi.csproj" />
 </Solution>

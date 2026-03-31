@@ -8,7 +8,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
-} from "react-native";
+} from "react-native"; //i hate nigger
 
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
@@ -49,7 +49,7 @@ export default function PredictScreen() {
 
     try {
       const response = await fetch(
-        `http://192.168.1.128:50731/Predict?message=${encodeURIComponent(message)}`,
+        `http://10.131.20.76:50731/Predict?message=${encodeURIComponent(message)}`,
         {
           method: "GET",
           headers: {

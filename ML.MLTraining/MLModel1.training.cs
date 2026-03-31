@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
+using Microsoft.ML.Trainers.LightGbm;
 
 namespace ML_MLTraining
 {
@@ -91,7 +92,7 @@ namespace ML_MLTraining
             // Data process configuration with pipeline data transformations
             var pipeline = mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"tweet",outputColumnName:@"tweet")      
                                     .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"tweet"}))      
-                                    .Append(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(new LbfgsLogisticRegressionBinaryTrainer.Options(){L1Regularization=0.03125F,L2Regularization=0.03125F,LabelColumnName=@"label",FeatureColumnName=@"Features"}));
+                                    .Append(mlContext.BinaryClassification.Trainers.LightGbm(new LightGbmBinaryTrainer.Options(){NumberOfLeaves=5103,NumberOfIterations=3355,MinimumExampleCountPerLeaf=36,LearningRate=0.030960487187372404,LabelColumnName=@"label",FeatureColumnName=@"Features",Booster=new GradientBooster.Options(){SubsampleFraction=0.6165034364861617,FeatureFraction=0.7866312384179962,L1Regularization=4.04305823209761E-09,L2Regularization=0.886042523249873},MaximumBinCountPerFeature=101}));
 
             return pipeline;
         }

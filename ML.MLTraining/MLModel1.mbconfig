@@ -43,6 +43,176 @@
     "Type": "LocalCPU",
     "Version": 1
   },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmBinary",
+        "Score": 0.97103254944712658,
+        "RuntimeInSeconds": 271.92,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e3",
+          "e0": {
+            "InputColumnName": "tweet",
+            "OutputColumnName": "tweet"
+          },
+          "e1": {
+            "InputColumnNames": [
+              "tweet"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 5103,
+            "MinimumExampleCountPerLeaf": 36,
+            "LearningRate": 0.030960487187372404,
+            "NumberOfTrees": 3355,
+            "SubsampleFraction": 0.61650343648616168,
+            "MaximumBinCountPerFeature": 101,
+            "FeatureFraction": 0.7866312384179962,
+            "L1Regularization": 4.04305823209761E-09,
+            "L2Regularization": 0.886042523249873,
+            "LabelColumnName": "label",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmBinary",
+        "Score": 0.97056533250272548,
+        "RuntimeInSeconds": 268.821,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e3",
+          "e0": {
+            "InputColumnName": "tweet",
+            "OutputColumnName": "tweet"
+          },
+          "e1": {
+            "InputColumnNames": [
+              "tweet"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 5126,
+            "MinimumExampleCountPerLeaf": 35,
+            "LearningRate": 0.030951364841395136,
+            "NumberOfTrees": 3347,
+            "SubsampleFraction": 0.61245448010803438,
+            "MaximumBinCountPerFeature": 101,
+            "FeatureFraction": 0.78593695247885453,
+            "L1Regularization": 4.0680708497419733E-09,
+            "L2Regularization": 0.87957706605149555,
+            "LabelColumnName": "label",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmBinary",
+        "Score": 0.97056533250272548,
+        "RuntimeInSeconds": 275.98,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e3",
+          "e0": {
+            "InputColumnName": "tweet",
+            "OutputColumnName": "tweet"
+          },
+          "e1": {
+            "InputColumnNames": [
+              "tweet"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 5079,
+            "MinimumExampleCountPerLeaf": 36,
+            "LearningRate": 0.030969612221993507,
+            "NumberOfTrees": 3362,
+            "SubsampleFraction": 0.62057916064587038,
+            "MaximumBinCountPerFeature": 100,
+            "FeatureFraction": 0.78732552435713787,
+            "L1Regularization": 4.0181994050494668E-09,
+            "L2Regularization": 0.89255550571738,
+            "LabelColumnName": "label",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsLogisticRegressionBinary",
+        "Score": 0.97040959352125833,
+        "RuntimeInSeconds": 3.929,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e4",
+          "e0": {
+            "InputColumnName": "tweet",
+            "OutputColumnName": "tweet"
+          },
+          "e1": {
+            "InputColumnNames": [
+              "tweet"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "L1Regularization": 0.03125,
+            "L2Regularization": 0.03433003,
+            "LabelColumnName": "label",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsLogisticRegressionBinary",
+        "Score": 0.97040959352125833,
+        "RuntimeInSeconds": 3.573,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e4",
+          "e0": {
+            "InputColumnName": "tweet",
+            "OutputColumnName": "tweet"
+          },
+          "e1": {
+            "InputColumnNames": [
+              "tweet"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "L1Regularization": 0.03126027,
+            "L2Regularization": 0.034493048,
+            "LabelColumnName": "label",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "FeaturizeText",
+      "e1": "Concatenate",
+      "e2": "FastTreeBinary",
+      "e3": "LightGbmBinary",
+      "e4": "LbfgsLogisticRegressionBinary",
+      "e5": "SdcaLogisticRegressionBinary",
+      "e6": "FastForestBinary",
+      "e7": "Naive"
+    },
+    "Schema": "e0 * e1 * (e2 + e3 + e4 + e5 + e6 * e7)",
+    "MetricName": "Accuracy",
+    "ModelFilePath": "C:\\Users\\Christian\\source\\repos\\ML\\ML.MLTraining\\MLModel1.mlnet"
+  },
   "Type": "TrainingConfig",
   "Version": 5,
   "TrainingOption": {

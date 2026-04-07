@@ -185,7 +185,7 @@
     "Version": 2,
     "Subsampling": false,
     "Type": "ClassificationTrainingOption",
-    "TrainingTime": 3200,
+    "TrainingTime": 1800,
     "LabelColumn": "burnout_score",
     "ValidationOption": {
       "Version": 0,

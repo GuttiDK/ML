@@ -1,0 +1,665 @@
+﻿{
+  "Scenario": "Regression",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "C:\\Users\\Christian\\Downloads\\student_mental_health_burnout_1M.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "age",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "gender",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "academic_year",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "study_hours_per_day",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "exam_pressure",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "academic_performance",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "stress_level",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "anxiety_score",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "depression_score",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "sleep_hours",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "physical_activity",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "social_support",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "screen_time",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "internet_usage",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "financial_stress",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "family_expectation",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "burnout_score",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "mental_health_index",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "risk_level",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "dropout_risk",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaRegression",
+        "Score": 0.61939160981626729,
+        "RuntimeInSeconds": 84.758,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e7",
+          "e0": {
+            "OutputColumnNames": [
+              "gender",
+              "risk_level"
+            ],
+            "InputColumnNames": [
+              "gender",
+              "risk_level"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ],
+            "InputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "gender",
+              "risk_level",
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e7": {
+            "L1Regularization": 0.086420976,
+            "L2Regularization": 0.058580864,
+            "LabelColumnName": "dropout_risk",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaRegression",
+        "Score": 0.61862620854091177,
+        "RuntimeInSeconds": 51.149,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e7",
+          "e0": {
+            "OutputColumnNames": [
+              "gender",
+              "risk_level"
+            ],
+            "InputColumnNames": [
+              "gender",
+              "risk_level"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ],
+            "InputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "gender",
+              "risk_level",
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e7": {
+            "L1Regularization": 0.33361775,
+            "L2Regularization": 0.04288694,
+            "LabelColumnName": "dropout_risk",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaRegression",
+        "Score": 0.61724250881261611,
+        "RuntimeInSeconds": 31.96,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e7",
+          "e0": {
+            "OutputColumnNames": [
+              "gender",
+              "risk_level"
+            ],
+            "InputColumnNames": [
+              "gender",
+              "risk_level"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ],
+            "InputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "gender",
+              "risk_level",
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e7": {
+            "L1Regularization": 1.455925,
+            "L2Regularization": 0.03125,
+            "LabelColumnName": "dropout_risk",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaRegression",
+        "Score": 0.61593036440130078,
+        "RuntimeInSeconds": 30.618,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e7",
+          "e0": {
+            "OutputColumnNames": [
+              "gender",
+              "risk_level"
+            ],
+            "InputColumnNames": [
+              "gender",
+              "risk_level"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ],
+            "InputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "gender",
+              "risk_level",
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e7": {
+            "L1Regularization": 1.2878911,
+            "L2Regularization": 0.031397447,
+            "LabelColumnName": "dropout_risk",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaRegression",
+        "Score": 0.6145873172100027,
+        "RuntimeInSeconds": 31.951,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e7",
+          "e0": {
+            "OutputColumnNames": [
+              "gender",
+              "risk_level"
+            ],
+            "InputColumnNames": [
+              "gender",
+              "risk_level"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ],
+            "InputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "gender",
+              "risk_level",
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation",
+              "burnout_score",
+              "mental_health_index"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e7": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "dropout_risk",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "OneHotEncoding",
+      "e1": "ReplaceMissingValues",
+      "e2": "Concatenate",
+      "e3": "FastTreeRegression",
+      "e4": "FastForestRegression",
+      "e5": "LightGbmRegression",
+      "e6": "LbfgsPoissonRegressionRegression",
+      "e7": "SdcaRegression"
+    },
+    "Schema": "e0 * e1 * e2 * (e3 + e4 + e5 + e6 + e7)",
+    "MetricName": "RSquared",
+    "ModelFilePath": "C:\\Users\\Christian\\source\\repos\\ML\\ML.MLTraining\\StudentHealth\\MLDropoutRisk.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Type": "RegressionTrainingOption",
+    "TrainingTime": 1800,
+    "LabelColumn": "dropout_risk",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "TrainValidateSplitValidationOption",
+      "SplitRatio": 0.2
+    }
+  }
+}

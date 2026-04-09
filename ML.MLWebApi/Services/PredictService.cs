@@ -1,20 +1,20 @@
 ﻿using Microsoft.Extensions.ML;
-using static ML_MLTraining.MLModel1;
+using ML_MLTraining;
 
 namespace ML.MLWebApi.Services
 {
     public interface IPredictService
     {
-        Task<ModelOutput> PredictToxicCommentAsync(string message);
+        Task<MLModel1.ModelOutput> PredictToxicCommentAsync(string message);
     }
-    public class PredictService(PredictionEnginePool<ML_MLTraining.MLModel1.ModelInput, ML_MLTraining.MLModel1.ModelOutput> predictionEnginePool) : IPredictService
+    public class PredictService(PredictionEnginePool<MLModel1.ModelInput, MLModel1.ModelOutput> predictionEnginePool) : IPredictService
     {
-        private readonly PredictionEnginePool<ModelInput, ModelOutput> _predictionEnginePool = predictionEnginePool;
+        private readonly PredictionEnginePool<MLModel1.ModelInput, MLModel1.ModelOutput> _predictionEnginePool = predictionEnginePool;
 
-        public async Task<ModelOutput> PredictToxicCommentAsync(string message)
+        public async Task<MLModel1.ModelOutput> PredictToxicCommentAsync(string message)
         {
             //Load sample data
-            var sampleData = new ModelInput()
+            var sampleData = new MLModel1.ModelInput()
             {
                 Tweet = message
             };

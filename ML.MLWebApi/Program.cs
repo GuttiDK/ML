@@ -25,15 +25,6 @@ builder.Services.AddSingleton<MLContext>();
 var modelBasePath = builder.Configuration["ML:ModelBasePath"]
     ?? Path.Combine(AppContext.BaseDirectory, "Models");
 
-
-builder.Services.AddSingleton<
-    IMLPredictionService<
-        MLRiskLevel.ModelInput,
-        MLRiskLevel.ModelOutput,
-        string>>(sp => new RiskLevelService(
-            sp.GetRequiredService<MLContext>(),
-            Path.Combine(modelBasePath, "MLRiskLevel.mlnet")));
-
 builder.Services.AddSingleton<
     IMLPredictionService<
         MLBurnoutScore.ModelInput,

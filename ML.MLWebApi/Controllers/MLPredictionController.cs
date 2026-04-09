@@ -11,7 +11,6 @@ namespace ML.MLWebApi.Controllers;
 /// Route: POST /api/ml/{model}/predict
 ///
 /// Gyldige model-navne:
-///   - risklevel      → Forudsiger Low / Medium / High
 ///   - burnoutscore   → Forudsiger burnout score (float)
 ///   - mentalhealth   → Forudsiger mental health index (float)
 ///   - dropoutrisk    → Forudsiger dropout risiko (float, regression)
@@ -19,10 +18,6 @@ namespace ML.MLWebApi.Controllers;
 [ApiController]
 [Route("api/ml")]
 public class MLPredictionController(
-    IMLPredictionService<
-            MLRiskLevel.ModelInput,
-            MLRiskLevel.ModelOutput,
-            string> riskLevel,
     IMLPredictionService<
             MLBurnoutScore.ModelInput,
             MLBurnoutScore.ModelOutput,
@@ -36,10 +31,6 @@ public class MLPredictionController(
             MLDropoutRisk.ModelOutput,
             float> dropoutRisk) : ControllerBase
 {
-    private readonly IMLPredictionService<
-        MLRiskLevel.ModelInput,
-        MLRiskLevel.ModelOutput,
-        string> _riskLevel = riskLevel;
 
     private readonly IMLPredictionService<
         MLBurnoutScore.ModelInput,
@@ -55,15 +46,6 @@ public class MLPredictionController(
         MLDropoutRisk.ModelInput,
         MLDropoutRisk.ModelOutput,
         float> _dropoutRisk = dropoutRisk;
-
-    /// <summary>
-    /// Forudsig risk level (Low/Medium/High).
-    /// POST /api/ml/risklevel/predict
-    /// </summary>
-    [HttpPost("risklevel/predict")]
-    [ProducesResponseType(typeof(PredictionResultDto<string>), StatusCodes.Status200OK)]
-    public IActionResult PredictRiskLevel([FromBody] StudentInputDto input)
-        => Ok(_riskLevel.PredictWithDetails(input));
 
     /// <summary>
     /// Forudsig burnout score.
@@ -102,7 +84,6 @@ public class MLPredictionController(
     {
         return Ok(new AllPredictionsDto
         {
-            RiskLevel = _riskLevel.PredictWithDetails(input),
             BurnoutScore = _burnoutScore.PredictWithDetails(input),
             MentalHealth = _mentalHealth.PredictWithDetails(input),
             DropoutRisk = _dropoutRisk.PredictWithDetails(input)
@@ -115,7 +96,6 @@ public class MLPredictionController(
 /// </summary>
 public class AllPredictionsDto
 {
-    public PredictionResultDto<string> RiskLevel { get; set; } = null!;
     public PredictionResultDto<float> BurnoutScore { get; set; } = null!;
     public PredictionResultDto<float> MentalHealth { get; set; } = null!;
     public PredictionResultDto<float> DropoutRisk { get; set; } = null!;

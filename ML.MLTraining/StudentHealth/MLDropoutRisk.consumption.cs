@@ -87,10 +87,6 @@ namespace ML_MLTraining
             [ColumnName(@"mental_health_index")]
             public float Mental_health_index { get; set; }
 
-            [LoadColumn(18)]
-            [ColumnName(@"risk_level")]
-            public string Risk_level { get; set; }
-
             [LoadColumn(19)]
             [ColumnName(@"dropout_risk")]
             public float Dropout_risk { get; set; }
@@ -158,9 +154,6 @@ namespace ML_MLTraining
 
             [ColumnName(@"mental_health_index")]
             public float Mental_health_index { get; set; }
-
-            [ColumnName(@"risk_level")]
-            public float[] Risk_level { get; set; }
 
             [ColumnName(@"dropout_risk")]
             public float Dropout_risk { get; set; }

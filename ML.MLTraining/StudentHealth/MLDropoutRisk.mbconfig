@@ -159,7 +159,7 @@
       },
       {
         "ColumnName": "risk_level",
-        "ColumnPurpose": "Feature",
+        "ColumnPurpose": "Ignore",
         "ColumnDataFormat": "String",
         "IsCategorical": true,
         "Type": "Column",
@@ -187,18 +187,16 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "LightGbmRegression",
-        "Score": 0.6326369185392211,
-        "RuntimeInSeconds": 274.347,
+        "Score": 0.632806062601381,
+        "RuntimeInSeconds": 73.377,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e5",
           "e0": {
             "OutputColumnNames": [
-              "gender",
-              "risk_level"
+              "gender"
             ],
             "InputColumnNames": [
-              "gender",
-              "risk_level"
+              "gender"
             ]
           },
           "e1": {
@@ -244,7 +242,6 @@
           "e2": {
             "InputColumnNames": [
               "gender",
-              "risk_level",
               "age",
               "academic_year",
               "study_hours_per_day",
@@ -267,14 +264,14 @@
           },
           "e5": {
             "NumberOfLeaves": 4,
-            "MinimumExampleCountPerLeaf": 28,
-            "LearningRate": 0.065043698358641752,
-            "NumberOfTrees": 1129,
-            "SubsampleFraction": 0.66481954627773732,
-            "MaximumBinCountPerFeature": 307,
-            "FeatureFraction": 0.96732805716028614,
+            "MinimumExampleCountPerLeaf": 24,
+            "LearningRate": 0.025889870477865447,
+            "NumberOfTrees": 3231,
+            "SubsampleFraction": 0.48869157311521066,
+            "MaximumBinCountPerFeature": 362,
+            "FeatureFraction": 0.80060660505501435,
             "L1Regularization": 2E-10,
-            "L2Regularization": 0.074379692853022775,
+            "L2Regularization": 0.025460445318163737,
             "LabelColumnName": "dropout_risk",
             "FeatureColumnName": "Features"
           }
@@ -284,18 +281,16 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "LightGbmRegression",
-        "Score": 0.63221221171884545,
-        "RuntimeInSeconds": 2122.448,
+        "Score": 0.63272899172953945,
+        "RuntimeInSeconds": 60.806,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e5",
           "e0": {
             "OutputColumnNames": [
-              "gender",
-              "risk_level"
+              "gender"
             ],
             "InputColumnNames": [
-              "gender",
-              "risk_level"
+              "gender"
             ]
           },
           "e1": {
@@ -341,7 +336,6 @@
           "e2": {
             "InputColumnNames": [
               "gender",
-              "risk_level",
               "age",
               "academic_year",
               "study_hours_per_day",
@@ -365,13 +359,13 @@
           "e5": {
             "NumberOfLeaves": 4,
             "MinimumExampleCountPerLeaf": 20,
-            "LearningRate": 0.13089946152216933,
-            "NumberOfTrees": 1487,
-            "SubsampleFraction": 0.18814575576484149,
-            "MaximumBinCountPerFeature": 514,
-            "FeatureFraction": 0.88403262027542628,
-            "L1Regularization": 5.0469106574124E-10,
-            "L2Regularization": 0.069024012029335974,
+            "LearningRate": 0.035249402852612063,
+            "NumberOfTrees": 2789,
+            "SubsampleFraction": 0.13216836658828426,
+            "MaximumBinCountPerFeature": 438,
+            "FeatureFraction": 0.83232131045473845,
+            "L1Regularization": 2.8216062645720167E-09,
+            "L2Regularization": 0.029204931865066119,
             "LabelColumnName": "dropout_risk",
             "FeatureColumnName": "Features"
           }
@@ -381,18 +375,16 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "LightGbmRegression",
-        "Score": 0.63073052305735566,
-        "RuntimeInSeconds": 9965.016,
+        "Score": 0.63268568485809,
+        "RuntimeInSeconds": 82.975,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e5",
           "e0": {
             "OutputColumnNames": [
-              "gender",
-              "risk_level"
+              "gender"
             ],
             "InputColumnNames": [
-              "gender",
-              "risk_level"
+              "gender"
             ]
           },
           "e1": {
@@ -438,7 +430,6 @@
           "e2": {
             "InputColumnNames": [
               "gender",
-              "risk_level",
               "age",
               "academic_year",
               "study_hours_per_day",
@@ -461,14 +452,14 @@
           },
           "e5": {
             "NumberOfLeaves": 4,
-            "MinimumExampleCountPerLeaf": 26,
-            "LearningRate": 0.22287139395571909,
-            "NumberOfTrees": 177,
-            "SubsampleFraction": 0.8847653168880566,
-            "MaximumBinCountPerFeature": 296,
-            "FeatureFraction": 0.97739628194743766,
-            "L1Regularization": 3.1895576293881228E-10,
-            "L2Regularization": 0.53171073710486327,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 0.047343631966944806,
+            "NumberOfTrees": 3224,
+            "SubsampleFraction": 0.40739421516745733,
+            "MaximumBinCountPerFeature": 173,
+            "FeatureFraction": 0.85887741343581014,
+            "L1Regularization": 1.4548710899324953E-09,
+            "L2Regularization": 0.94597335127283233,
             "LabelColumnName": "dropout_risk",
             "FeatureColumnName": "Features"
           }
@@ -478,18 +469,16 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "LightGbmRegression",
-        "Score": 0.62633716497791947,
-        "RuntimeInSeconds": 222.064,
+        "Score": 0.63265946805418793,
+        "RuntimeInSeconds": 8518.417,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e5",
           "e0": {
             "OutputColumnNames": [
-              "gender",
-              "risk_level"
+              "gender"
             ],
             "InputColumnNames": [
-              "gender",
-              "risk_level"
+              "gender"
             ]
           },
           "e1": {
@@ -535,7 +524,6 @@
           "e2": {
             "InputColumnNames": [
               "gender",
-              "risk_level",
               "age",
               "academic_year",
               "study_hours_per_day",
@@ -558,14 +546,14 @@
           },
           "e5": {
             "NumberOfLeaves": 4,
-            "MinimumExampleCountPerLeaf": 22,
-            "LearningRate": 0.99999977667298645,
-            "NumberOfTrees": 1197,
-            "SubsampleFraction": 0.99999977667298645,
-            "MaximumBinCountPerFeature": 258,
-            "FeatureFraction": 0.99999999,
-            "L1Regularization": 2E-10,
-            "L2Regularization": 0.99999977667298645,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 0.047111198178592592,
+            "NumberOfTrees": 3102,
+            "SubsampleFraction": 0.39781072230411024,
+            "MaximumBinCountPerFeature": 172,
+            "FeatureFraction": 0.85688654715755064,
+            "L1Regularization": 1.3601422058256584E-09,
+            "L2Regularization": 0.97428023273647157,
             "LabelColumnName": "dropout_risk",
             "FeatureColumnName": "Features"
           }
@@ -574,19 +562,17 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "FastTreeRegression",
-        "Score": 0.62295148123929,
-        "RuntimeInSeconds": 29.877,
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.63265210831375507,
+        "RuntimeInSeconds": 75.939,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e3",
+          "_SCHEMA_": "e0 * e1 * e2 * e5",
           "e0": {
             "OutputColumnNames": [
-              "gender",
-              "risk_level"
+              "gender"
             ],
             "InputColumnNames": [
-              "gender",
-              "risk_level"
+              "gender"
             ]
           },
           "e1": {
@@ -632,7 +618,6 @@
           "e2": {
             "InputColumnNames": [
               "gender",
-              "risk_level",
               "age",
               "academic_year",
               "study_hours_per_day",
@@ -653,16 +638,18 @@
             ],
             "OutputColumnName": "Features"
           },
-          "e3": {
-            "NumberOfLeaves": 233,
-            "MinimumExampleCountPerLeaf": 16,
-            "NumberOfTrees": 4,
-            "MaximumBinCountPerFeature": 986,
-            "FeatureFraction": 0.99999999,
-            "LearningRate": 0.78321901346421452,
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 0.047525817750444781,
+            "NumberOfTrees": 3237,
+            "SubsampleFraction": 0.41070740862625288,
+            "MaximumBinCountPerFeature": 173,
+            "FeatureFraction": 0.85868833413608325,
+            "L1Regularization": 1.4603013901428078E-09,
+            "L2Regularization": 0.93823770843117027,
             "LabelColumnName": "dropout_risk",
-            "FeatureColumnName": "Features",
-            "DiskTranspose": false
+            "FeatureColumnName": "Features"
           }
         }
       }

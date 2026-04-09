@@ -2,6 +2,8 @@
 
 public class StudentInputDto
 {
+    private string riskLevel;
+
     public float Age { get; set; }
     public string Gender { get; set; } = string.Empty;
     public float AcademicYear { get; set; }
@@ -22,5 +24,5 @@ public class StudentInputDto
     // Bruges kun af MLDropoutRisk (som feature, ikke label)
     public float? BurnoutScore { get; set; }
     public float? MentalHealthIndex { get; set; }
-    public string? RiskLevel { get; set; }
+    public string RiskLevel { get => riskLevel; set => riskLevel=value; }
 }

@@ -7,11 +7,9 @@ namespace ML.MLWebApi.Services
     {
         Task<ModelOutput> PredictToxicCommentAsync(string message);
     }
-    public class PredictService : IPredictService
+    public class PredictService(PredictionEnginePool<ML_MLTraining.MLModel1.ModelInput, ML_MLTraining.MLModel1.ModelOutput> predictionEnginePool) : IPredictService
     {
-        private readonly PredictionEnginePool<ModelInput, ModelOutput> _predictionEnginePool;
-
-        public PredictService(PredictionEnginePool<ModelInput, ModelOutput> predictionEnginePool) => _predictionEnginePool = predictionEnginePool;
+        private readonly PredictionEnginePool<ModelInput, ModelOutput> _predictionEnginePool = predictionEnginePool;
 
         public async Task<ModelOutput> PredictToxicCommentAsync(string message)
         {

@@ -186,11 +186,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "SdcaRegression",
-        "Score": 0.61939160981626729,
-        "RuntimeInSeconds": 84.758,
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.6326369185392211,
+        "RuntimeInSeconds": 274.347,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e7",
+          "_SCHEMA_": "e0 * e1 * e2 * e5",
           "e0": {
             "OutputColumnNames": [
               "gender",
@@ -265,9 +265,16 @@
             ],
             "OutputColumnName": "Features"
           },
-          "e7": {
-            "L1Regularization": 0.086420976,
-            "L2Regularization": 0.058580864,
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 28,
+            "LearningRate": 0.065043698358641752,
+            "NumberOfTrees": 1129,
+            "SubsampleFraction": 0.66481954627773732,
+            "MaximumBinCountPerFeature": 307,
+            "FeatureFraction": 0.96732805716028614,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 0.074379692853022775,
             "LabelColumnName": "dropout_risk",
             "FeatureColumnName": "Features"
           }
@@ -276,11 +283,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "SdcaRegression",
-        "Score": 0.61862620854091177,
-        "RuntimeInSeconds": 51.149,
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.63221221171884545,
+        "RuntimeInSeconds": 2122.448,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e7",
+          "_SCHEMA_": "e0 * e1 * e2 * e5",
           "e0": {
             "OutputColumnNames": [
               "gender",
@@ -355,9 +362,16 @@
             ],
             "OutputColumnName": "Features"
           },
-          "e7": {
-            "L1Regularization": 0.33361775,
-            "L2Regularization": 0.04288694,
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 0.13089946152216933,
+            "NumberOfTrees": 1487,
+            "SubsampleFraction": 0.18814575576484149,
+            "MaximumBinCountPerFeature": 514,
+            "FeatureFraction": 0.88403262027542628,
+            "L1Regularization": 5.0469106574124E-10,
+            "L2Regularization": 0.069024012029335974,
             "LabelColumnName": "dropout_risk",
             "FeatureColumnName": "Features"
           }
@@ -366,11 +380,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "SdcaRegression",
-        "Score": 0.61724250881261611,
-        "RuntimeInSeconds": 31.96,
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.63073052305735566,
+        "RuntimeInSeconds": 9965.016,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e7",
+          "_SCHEMA_": "e0 * e1 * e2 * e5",
           "e0": {
             "OutputColumnNames": [
               "gender",
@@ -445,9 +459,16 @@
             ],
             "OutputColumnName": "Features"
           },
-          "e7": {
-            "L1Regularization": 1.455925,
-            "L2Regularization": 0.03125,
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 26,
+            "LearningRate": 0.22287139395571909,
+            "NumberOfTrees": 177,
+            "SubsampleFraction": 0.8847653168880566,
+            "MaximumBinCountPerFeature": 296,
+            "FeatureFraction": 0.97739628194743766,
+            "L1Regularization": 3.1895576293881228E-10,
+            "L2Regularization": 0.53171073710486327,
             "LabelColumnName": "dropout_risk",
             "FeatureColumnName": "Features"
           }
@@ -456,11 +477,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "SdcaRegression",
-        "Score": 0.61593036440130078,
-        "RuntimeInSeconds": 30.618,
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.62633716497791947,
+        "RuntimeInSeconds": 222.064,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e7",
+          "_SCHEMA_": "e0 * e1 * e2 * e5",
           "e0": {
             "OutputColumnNames": [
               "gender",
@@ -535,9 +556,16 @@
             ],
             "OutputColumnName": "Features"
           },
-          "e7": {
-            "L1Regularization": 1.2878911,
-            "L2Regularization": 0.031397447,
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 22,
+            "LearningRate": 0.99999977667298645,
+            "NumberOfTrees": 1197,
+            "SubsampleFraction": 0.99999977667298645,
+            "MaximumBinCountPerFeature": 258,
+            "FeatureFraction": 0.99999999,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 0.99999977667298645,
             "LabelColumnName": "dropout_risk",
             "FeatureColumnName": "Features"
           }
@@ -546,11 +574,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "SdcaRegression",
-        "Score": 0.6145873172100027,
-        "RuntimeInSeconds": 31.951,
+        "TrainerName": "FastTreeRegression",
+        "Score": 0.62295148123929,
+        "RuntimeInSeconds": 29.877,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e7",
+          "_SCHEMA_": "e0 * e1 * e2 * e3",
           "e0": {
             "OutputColumnNames": [
               "gender",
@@ -625,11 +653,16 @@
             ],
             "OutputColumnName": "Features"
           },
-          "e7": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 0.1,
+          "e3": {
+            "NumberOfLeaves": 233,
+            "MinimumExampleCountPerLeaf": 16,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 986,
+            "FeatureFraction": 0.99999999,
+            "LearningRate": 0.78321901346421452,
             "LabelColumnName": "dropout_risk",
-            "FeatureColumnName": "Features"
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
           }
         }
       }
@@ -654,7 +687,7 @@
     "Version": 2,
     "Subsampling": false,
     "Type": "RegressionTrainingOption",
-    "TrainingTime": 1800,
+    "TrainingTime": 32000,
     "LabelColumn": "dropout_risk",
     "ValidationOption": {
       "Version": 0,

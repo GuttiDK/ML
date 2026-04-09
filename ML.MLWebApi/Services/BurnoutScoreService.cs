@@ -1,6 +1,5 @@
 ﻿using Microsoft.ML;
 using ML.MLWebApi.DTOs;
-using ML.MLTraining.StudentHealth;
 using ML.MLWebApi.Dtos;
 using ML_MLTraining;
 
@@ -25,14 +24,14 @@ public class BurnoutScoreService : IMLPredictionService<
     }
 
     public float Predict(StudentInputDto input)
-        => _engine.Predict(MapInput(input)).PredictedLabel;
+        => _engine.Predict(MapInput(input)).Score;
 
     public PredictionResultDto<float> PredictWithDetails(StudentInputDto input)
     {
         var output = _engine.Predict(MapInput(input));
         return new PredictionResultDto<float>
         {
-            PredictedValue = output.PredictedLabel,
+            PredictedValue = output.Score,
             ModelName = "BurnoutScore"
         };
     }
@@ -77,14 +76,14 @@ public class MentalHealthService : IMLPredictionService<
     }
 
     public float Predict(StudentInputDto input)
-        => _engine.Predict(MapInput(input)).PredictedLabel;
+        => _engine.Predict(MapInput(input)).Score;
 
     public PredictionResultDto<float> PredictWithDetails(StudentInputDto input)
     {
         var output = _engine.Predict(MapInput(input));
         return new PredictionResultDto<float>
         {
-            PredictedValue = output.PredictedLabel,
+            PredictedValue = output.Score,
             ModelName = "MentalHealth"
         };
     }

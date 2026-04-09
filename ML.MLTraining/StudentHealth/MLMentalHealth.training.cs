@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
+using Microsoft.ML.Trainers.LightGbm;
 using Microsoft.ML.Transforms;
 
 namespace ML_MLTraining
 {
-    public partial class MLRiskLevel
+    public partial class MLMentalHealth
     {
         public const string RetrainFilePath =  @"C:\Users\Christian\Downloads\student_mental_health_burnout_1M.csv";
         public const char RetrainSeparatorChar = ',';
@@ -93,9 +94,7 @@ namespace ML_MLTraining
             var pipeline = mlContext.Transforms.Categorical.OneHotEncoding(@"gender", @"gender", outputKind: OneHotEncodingEstimator.OutputKind.Indicator)      
                                     .Append(mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"age", @"age"),new InputOutputColumnPair(@"academic_year", @"academic_year"),new InputOutputColumnPair(@"study_hours_per_day", @"study_hours_per_day"),new InputOutputColumnPair(@"exam_pressure", @"exam_pressure"),new InputOutputColumnPair(@"academic_performance", @"academic_performance"),new InputOutputColumnPair(@"stress_level", @"stress_level"),new InputOutputColumnPair(@"anxiety_score", @"anxiety_score"),new InputOutputColumnPair(@"depression_score", @"depression_score"),new InputOutputColumnPair(@"sleep_hours", @"sleep_hours"),new InputOutputColumnPair(@"physical_activity", @"physical_activity"),new InputOutputColumnPair(@"social_support", @"social_support"),new InputOutputColumnPair(@"screen_time", @"screen_time"),new InputOutputColumnPair(@"internet_usage", @"internet_usage"),new InputOutputColumnPair(@"financial_stress", @"financial_stress"),new InputOutputColumnPair(@"family_expectation", @"family_expectation")}))      
                                     .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"gender",@"age",@"academic_year",@"study_hours_per_day",@"exam_pressure",@"academic_performance",@"stress_level",@"anxiety_score",@"depression_score",@"sleep_hours",@"physical_activity",@"social_support",@"screen_time",@"internet_usage",@"financial_stress",@"family_expectation"}))      
-                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"risk_level",inputColumnName:@"risk_level",addKeyValueAnnotationsAsText:false))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(new LbfgsMaximumEntropyMulticlassTrainer.Options(){L1Regularization=0.93273824F,L2Regularization=0.2733974F,LabelColumnName=@"risk_level",FeatureColumnName=@"Features"}))      
-                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
+                                    .Append(mlContext.Regression.Trainers.LightGbm(new LightGbmRegressionTrainer.Options(){NumberOfLeaves=4,NumberOfIterations=1199,MinimumExampleCountPerLeaf=20,LearningRate=0.5514400185923841,LabelColumnName=@"mental_health_index",FeatureColumnName=@"Features",Booster=new GradientBooster.Options(){SubsampleFraction=0.32982477346619177,FeatureFraction=0.9979008855655483,L1Regularization=2E-10,L2Regularization=0.8059483120283377},MaximumBinCountPerFeature=223}));
 
             return pipeline;
         }

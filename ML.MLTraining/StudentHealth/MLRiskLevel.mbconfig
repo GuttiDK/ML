@@ -187,8 +187,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "LbfgsMaximumEntropyMulti",
-        "Score": 0.63325698163302258,
-        "RuntimeInSeconds": 247.864,
+        "Score": 0.63429553695958552,
+        "RuntimeInSeconds": 186.854,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e3 * e8 * e11",
           "e0": {
@@ -266,8 +266,8 @@
             "AddKeyValueAnnotationsAsText": false
           },
           "e8": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 1.0,
+            "L1Regularization": 0.93273824,
+            "L2Regularization": 0.2733974,
             "LabelColumnName": "risk_level",
             "FeatureColumnName": "Features"
           }
@@ -277,8 +277,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "LbfgsMaximumEntropyMulti",
-        "Score": 0.63145645439979692,
-        "RuntimeInSeconds": 287.468,
+        "Score": 0.63420164289123926,
+        "RuntimeInSeconds": 216.715,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e3 * e8 * e11",
           "e0": {
@@ -356,8 +356,8 @@
             "AddKeyValueAnnotationsAsText": false
           },
           "e8": {
-            "L1Regularization": 3.913911,
-            "L2Regularization": 0.78298366,
+            "L1Regularization": 0.9947715,
+            "L2Regularization": 0.99073297,
             "LabelColumnName": "risk_level",
             "FeatureColumnName": "Features"
           }
@@ -367,8 +367,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "LbfgsMaximumEntropyMulti",
-        "Score": 0.62488995402621639,
-        "RuntimeInSeconds": 167.296,
+        "Score": 0.63415676620930139,
+        "RuntimeInSeconds": 207.702,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e3 * e8 * e11",
           "e0": {
@@ -446,8 +446,8 @@
             "AddKeyValueAnnotationsAsText": false
           },
           "e8": {
-            "L1Regularization": 0.25549892,
-            "L2Regularization": 1.2771659,
+            "L1Regularization": 0.99432003,
+            "L2Regularization": 0.99542725,
             "LabelColumnName": "risk_level",
             "FeatureColumnName": "Features"
           }
@@ -456,11 +456,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "FastForestOva",
-        "Score": 0.57779488176378091,
-        "RuntimeInSeconds": 134.653,
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.63405810026322862,
+        "RuntimeInSeconds": 229.406,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e3 * e5 * e11",
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e8 * e11",
           "e0": {
             "OutputColumnNames": [
               "gender"
@@ -535,10 +535,9 @@
             "InputColumnName": "risk_level",
             "AddKeyValueAnnotationsAsText": false
           },
-          "e5": {
-            "NumberOfTrees": 4,
-            "NumberOfLeaves": 4,
-            "FeatureFraction": 1.0,
+          "e8": {
+            "L1Regularization": 0.9943697,
+            "L2Regularization": 1.0067343,
             "LabelColumnName": "risk_level",
             "FeatureColumnName": "Features"
           }
@@ -547,11 +546,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "LbfgsLogisticRegressionOva",
-        "Score": 0.52255328746248264,
-        "RuntimeInSeconds": 116.8,
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.6336912207527966,
+        "RuntimeInSeconds": 191.615,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e3 * e7 * e11",
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e8 * e11",
           "e0": {
             "OutputColumnNames": [
               "gender"
@@ -626,9 +625,9 @@
             "InputColumnName": "risk_level",
             "AddKeyValueAnnotationsAsText": false
           },
-          "e7": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 1.0,
+          "e8": {
+            "L1Regularization": 2.4082174,
+            "L2Regularization": 0.7513932,
             "LabelColumnName": "risk_level",
             "FeatureColumnName": "Features"
           }
@@ -659,7 +658,7 @@
     "Version": 2,
     "Subsampling": false,
     "Type": "ClassificationTrainingOption",
-    "TrainingTime": 1800,
+    "TrainingTime": 32000,
     "LabelColumn": "risk_level",
     "ValidationOption": {
       "Version": 0,

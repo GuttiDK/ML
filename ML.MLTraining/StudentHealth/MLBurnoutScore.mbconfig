@@ -1,5 +1,5 @@
 ﻿{
-  "Scenario": "Classification",
+  "Scenario": "Regression",
   "DataSource": {
     "Version": 3,
     "EscapeCharacter": "\"",
@@ -179,13 +179,464 @@
     "Type": "LocalCPU",
     "Version": 1
   },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeRegression",
+        "Score": 0.73970881734117533,
+        "RuntimeInSeconds": 79.74,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3",
+          "e0": {
+            "OutputColumnNames": [
+              "gender"
+            ],
+            "InputColumnNames": [
+              "gender"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ],
+            "InputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "gender",
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 5,
+            "NumberOfTrees": 813,
+            "MaximumBinCountPerFeature": 139,
+            "FeatureFraction": 0.93268935075325177,
+            "LearningRate": 0.20657568314209473,
+            "LabelColumnName": "burnout_score",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeRegression",
+        "Score": 0.7392273537166465,
+        "RuntimeInSeconds": 3466.439,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3",
+          "e0": {
+            "OutputColumnNames": [
+              "gender"
+            ],
+            "InputColumnNames": [
+              "gender"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ],
+            "InputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "gender",
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 2,
+            "NumberOfTrees": 32767,
+            "MaximumBinCountPerFeature": 400,
+            "FeatureFraction": 0.61327727019911249,
+            "LearningRate": 0.0012517406381805463,
+            "LabelColumnName": "burnout_score",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.73119328525954908,
+        "RuntimeInSeconds": 13018.889,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e5",
+          "e0": {
+            "OutputColumnNames": [
+              "gender"
+            ],
+            "InputColumnNames": [
+              "gender"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ],
+            "InputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "gender",
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 0.99999977667298645,
+            "NumberOfTrees": 3027,
+            "SubsampleFraction": 0.99999977667298645,
+            "MaximumBinCountPerFeature": 525,
+            "FeatureFraction": 0.95899388852892586,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 0.99999977667298645,
+            "LabelColumnName": "burnout_score",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeRegression",
+        "Score": 0.72881813920604321,
+        "RuntimeInSeconds": 38.889,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3",
+          "e0": {
+            "OutputColumnNames": [
+              "gender"
+            ],
+            "InputColumnNames": [
+              "gender"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ],
+            "InputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "gender",
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 16,
+            "MinimumExampleCountPerLeaf": 12,
+            "NumberOfTrees": 33,
+            "MaximumBinCountPerFeature": 203,
+            "FeatureFraction": 0.99999999,
+            "LearningRate": 0.99999977667298645,
+            "LabelColumnName": "burnout_score",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeRegression",
+        "Score": 0.7267756677742504,
+        "RuntimeInSeconds": 18.567,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3",
+          "e0": {
+            "OutputColumnNames": [
+              "gender"
+            ],
+            "InputColumnNames": [
+              "gender"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ],
+            "InputColumnNames": [
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "gender",
+              "age",
+              "academic_year",
+              "study_hours_per_day",
+              "exam_pressure",
+              "academic_performance",
+              "stress_level",
+              "anxiety_score",
+              "depression_score",
+              "sleep_hours",
+              "physical_activity",
+              "social_support",
+              "screen_time",
+              "internet_usage",
+              "financial_stress",
+              "family_expectation"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 50,
+            "MinimumExampleCountPerLeaf": 17,
+            "NumberOfTrees": 13,
+            "MaximumBinCountPerFeature": 48,
+            "FeatureFraction": 0.99999999,
+            "LearningRate": 0.99999977667298645,
+            "LabelColumnName": "burnout_score",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "OneHotEncoding",
+      "e1": "ReplaceMissingValues",
+      "e2": "Concatenate",
+      "e3": "FastTreeRegression",
+      "e4": "FastForestRegression",
+      "e5": "LightGbmRegression",
+      "e6": "LbfgsPoissonRegressionRegression",
+      "e7": "SdcaRegression"
+    },
+    "Schema": "e0 * e1 * e2 * (e3 + e4 + e5 + e6 + e7)",
+    "MetricName": "RSquared",
+    "ModelFilePath": "C:\\Users\\Christian\\source\\repos\\ML\\ML.MLTraining\\StudentHealth\\MLBurnoutScore.mlnet"
+  },
   "Type": "TrainingConfig",
   "Version": 5,
   "TrainingOption": {
     "Version": 2,
     "Subsampling": false,
-    "Type": "ClassificationTrainingOption",
-    "TrainingTime": 1800,
+    "Type": "RegressionTrainingOption",
+    "TrainingTime": 32000,
     "LabelColumn": "burnout_score",
     "ValidationOption": {
       "Version": 0,

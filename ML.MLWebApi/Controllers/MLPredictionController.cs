@@ -2,6 +2,7 @@
 using ML.MLWebApi.Dtos;
 using ML.MLWebApi.DTOs;
 using ML.MLWebApi.Services;
+using ML_MLTraining;
 
 namespace ML.MLWebApi.Controllers;
 
@@ -17,51 +18,43 @@ namespace ML.MLWebApi.Controllers;
 /// </summary>
 [ApiController]
 [Route("api/ml")]
-public class MLPredictionController : ControllerBase
+public class MLPredictionController(
+    IMLPredictionService<
+            MLRiskLevel.ModelInput,
+            MLRiskLevel.ModelOutput,
+            string> riskLevel,
+    IMLPredictionService<
+            MLBurnoutScore.ModelInput,
+            MLBurnoutScore.ModelOutput,
+            float> burnoutScore,
+    IMLPredictionService<
+            MLMentalHealth.ModelInput,
+            MLMentalHealth.ModelOutput,
+            float> mentalHealth,
+    IMLPredictionService<
+            MLDropoutRisk.ModelInput,
+            MLDropoutRisk.ModelOutput,
+            float> dropoutRisk) : ControllerBase
 {
     private readonly IMLPredictionService<
-        ML.MLTraining.StudentHealth.MLRiskLevel.ModelInput,
-        ML.MLTraining.StudentHealth.MLRiskLevel.ModelOutput,
-        string> _riskLevel;
+        MLRiskLevel.ModelInput,
+        MLRiskLevel.ModelOutput,
+        string> _riskLevel = riskLevel;
 
     private readonly IMLPredictionService<
-        ML.MLTraining.StudentHealth.MLBurnoutScore.ModelInput,
-        ML.MLTraining.StudentHealth.MLBurnoutScore.ModelOutput,
-        float> _burnoutScore;
+        MLBurnoutScore.ModelInput,
+        MLBurnoutScore.ModelOutput,
+        float> _burnoutScore = burnoutScore;
 
     private readonly IMLPredictionService<
-        ML.MLTraining.StudentHealth.MLMentalHealth.ModelInput,
-        ML.MLTraining.StudentHealth.MLMentalHealth.ModelOutput,
-        float> _mentalHealth;
+        MLMentalHealth.ModelInput,
+        MLMentalHealth.ModelOutput,
+        float> _mentalHealth = mentalHealth;
 
     private readonly IMLPredictionService<
-        ML.MLTraining.StudentHealth.MLDropoutRisk.ModelInput,
-        ML.MLTraining.StudentHealth.MLDropoutRisk.ModelOutput,
-        float> _dropoutRisk;
-
-    public MLPredictionController(
-        IMLPredictionService<
-            ML.MLTraining.StudentHealth.MLRiskLevel.ModelInput,
-            ML.MLTraining.StudentHealth.MLRiskLevel.ModelOutput,
-            string> riskLevel,
-        IMLPredictionService<
-            ML.MLTraining.StudentHealth.MLBurnoutScore.ModelInput,
-            ML.MLTraining.StudentHealth.MLBurnoutScore.ModelOutput,
-            float> burnoutScore,
-        IMLPredictionService<
-            ML.MLTraining.StudentHealth.MLMentalHealth.ModelInput,
-            ML.MLTraining.StudentHealth.MLMentalHealth.ModelOutput,
-            float> mentalHealth,
-        IMLPredictionService<
-            ML.MLTraining.StudentHealth.MLDropoutRisk.ModelInput,
-            ML.MLTraining.StudentHealth.MLDropoutRisk.ModelOutput,
-            float> dropoutRisk)
-    {
-        _riskLevel = riskLevel;
-        _burnoutScore = burnoutScore;
-        _mentalHealth = mentalHealth;
-        _dropoutRisk = dropoutRisk;
-    }
+        MLDropoutRisk.ModelInput,
+        MLDropoutRisk.ModelOutput,
+        float> _dropoutRisk = dropoutRisk;
 
     /// <summary>
     /// Forudsig risk level (Low/Medium/High).

@@ -1,5 +1,4 @@
 ﻿using Microsoft.ML;
-using ML.MLTraining.StudentHealth;  // Reference til dit ML.MLTraining projekt
 using ML.MLWebApi.Dtos;
 using ML.MLWebApi.DTOs;
 using ML_MLTraining;
@@ -30,16 +29,28 @@ public class RiskLevelService : IMLPredictionService<
     public PredictionResultDto<string> PredictWithDetails(StudentInputDto input)
     {
         var output = _engine.Predict(MapInput(input));
+
+        // Prepare variable for annotation retrieval (GetValue requires ref parameter).
+        ReadOnlyMemory<char>[] keys = null;
+        try
+        {
+            var scoreColumn = _engine.OutputSchema["Score"];
+            // GetValue<T> has signature GetValue<T>(string kind, ref T value)
+            scoreColumn.Annotations.GetValue("KeyValues", ref keys);
+        }
+        catch
+        {
+            // If annotation isn't present or retrieval fails, leave keys as null.
+            keys = null;
+        }
+
         return new PredictionResultDto<string>
         {
             PredictedValue = output.PredictedLabel,
             ModelName = "RiskLevel",
-            Scores = output.Score != null
-                ? _engine.OutputSchema["Score"].Annotations
-                    .GetValue<ReadOnlyMemory<char>[]>("KeyValues", out var keys) == null
-                    ? null
-                    : keys.Select((k, i) => (Key: k.ToString(), Val: output.Score[i]))
-                          .ToDictionary(x => x.Key, x => x.Val)
+            Scores = output.Score != null && keys != null
+                ? keys.Select((k, i) => (Key: k.ToString(), Val: output.Score[i]))
+                      .ToDictionary(x => x.Key, x => x.Val)
                 : null
         };
     }

@@ -22,6 +22,7 @@ export function FormPage({ title, fields, input, onInputChange }: FormPageProps)
           min={field.min}
           max={field.max}
           step={field.step}
+          isInteger={field.isInteger}
           options={field.type === 'select' ? (field as any).options : undefined}
         />
       ))}

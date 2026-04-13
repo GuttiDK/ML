@@ -1,35 +1,36 @@
 export interface PredictionInput {
   age: number;
-  gender: 'Dreng' | 'Kvinde' | 'Andet';
-  yearsLeft: number;
-  studyHours: number;
+  gender: string;
+  academicYear: number;
+  studyHoursPerDay: number;
   examPressure: number;
-  performance: number;
-  stress: number;
-  anxiety: number;
-  depression: number;
-  sleep: number;
-  physical: number;
+  academicPerformance: number;
+  stressLevel: number;
+  anxietyScore: number;
+  depressionScore: number;
+  sleepHours: number;
+  physicalActivity: number;
+  socialSupport: number;
   screenTime: number;
-  internet: number;
+  internetUsage: number;
   financialStress: number;
   familyExpectation: number;
 }
 
 export interface PredictionOutput {
   burnoutScore: number;
-  mentalHealth: number;
-  riskLevel: number;
+  mentalHealthIndex: number;
   dropoutRisk: number;
 }
 
 export interface FormFieldConfig {
   key: keyof PredictionInput;
   label: string;
-  type: 'number' | 'select';
+  type: 'number' | 'select' | 'slider';
   min?: number;
   max?: number;
   step?: string;
+  isInteger?: boolean;
   options?: { value: string; label: string }[];
 }
 

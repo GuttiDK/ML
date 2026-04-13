@@ -1,11 +1,12 @@
 interface FormFieldProps {
   label: string;
-  type: 'number' | 'select';
+  type: 'number' | 'select' | 'slider';
   value: string | number;
   onChange: (value: string | number) => void;
   min?: number;
   max?: number;
   step?: string;
+  isInteger?: boolean;
   options?: { value: string; label: string }[];
 }
 
@@ -17,8 +18,11 @@ export function FormField({
   min,
   max,
   step,
+  isInteger,
   options,
 }: FormFieldProps) {
+  const numValue = typeof value === 'string' ? parseFloat(value) : value;
+  
   return (
     <div className="form-group">
       <label>{label}</label>
@@ -30,14 +34,35 @@ export function FormField({
             </option>
           ))}
         </select>
+      ) : type === 'slider' ? (
+        <div className="slider-group">
+          <input
+            type="range"
+            value={numValue}
+            onChange={(e) => onChange(isInteger ? parseInt(e.target.value) : parseFloat(e.target.value))}
+            min={min}
+            max={max}
+            step={isInteger ? '1' : step || '0.1'}
+            className="slider"
+          />
+          <div className="slider-value">{numValue}</div>
+        </div>
       ) : (
         <input
           type="number"
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => {
+            const inputValue = e.target.value;
+            if (isInteger) {
+              const intValue = parseInt(inputValue);
+              if (!isNaN(intValue)) onChange(intValue);
+            } else {
+              onChange(inputValue);
+            }
+          }}
           min={min}
           max={max}
-          step={step}
+          step={isInteger ? '1' : step}
         />
       )}
     </div>

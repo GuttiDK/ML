@@ -8,8 +8,7 @@ interface ResultsProps {
 
 const RESULT_ITEMS = [
   { icon: '🔥', label: 'Burnout Score', key: 'burnoutScore' as const },
-  { icon: '🧠', label: 'Mental Health', key: 'mentalHealth' as const },
-  { icon: '⚠️', label: 'Risk Level', key: 'riskLevel' as const },
+  { icon: '🧠', label: 'Mental Health Index', key: 'mentalHealthIndex' as const },
   { icon: '📉', label: 'Dropout Risk', key: 'dropoutRisk' as const },
 ];
 

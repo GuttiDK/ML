@@ -7,20 +7,21 @@ import { Header, FormWizard, Results } from './components'
 
 const DEFAULT_INPUT: PredictionInput = {
   age: 18,
-  gender: 'Dreng',
-  yearsLeft: 4,
-  studyHours: 8,
+  gender: 'Male',
+  academicYear: 2,
+  studyHoursPerDay: 6,
   examPressure: 5,
-  performance: 75,
-  stress: 5,
-  anxiety: 5,
-  depression: 5,
-  sleep: 8,
-  physical: 2,
-  screenTime: 6,
-  internet: 4,
+  academicPerformance: 75,
+  stressLevel: 5,
+  anxietyScore: 5,
+  depressionScore: 5,
+  sleepHours: 7,
+  physicalActivity: 5,
+  socialSupport: 7,
+  screenTime: 4,
+  internetUsage: 3,
   financialStress: 5,
-  familyExpectation: 7,
+  familyExpectation: 6,
 }
 
 function App() {

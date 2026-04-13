@@ -8,6 +8,17 @@ using ML_MLTraining;
 // Configure app
 var builder = WebApplication.CreateBuilder(args);
 
+// Add CORS support
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocalhost", builder =>
+    {
+        builder.WithOrigins("http://localhost:5173", "http://localhost:3000", "http://localhost:5000")
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 // Add controllers
 builder.Services.AddControllers();
 

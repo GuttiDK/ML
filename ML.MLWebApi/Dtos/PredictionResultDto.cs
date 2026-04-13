@@ -1,4 +1,4 @@
-﻿namespace ML.MLWebApi.DTOs;
+﻿namespace ML.MLWebApi.Dtos;
 
 public class PredictionResultDto<TResult>
 {

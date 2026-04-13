@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ML.MLWebApi.Dtos;
-using ML.MLWebApi.DTOs;
 using ML.MLWebApi.Services;
 using ML_MLTraining;
 

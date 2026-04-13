@@ -1,5 +1,4 @@
 ﻿using Microsoft.ML;
-using ML.MLWebApi.DTOs;
 using ML.MLWebApi.Dtos;
 using ML_MLTraining;
 
@@ -160,6 +159,5 @@ public class DropoutRiskService : IMLPredictionService<
         Family_expectation = dto.FamilyExpectation,
         Burnout_score = dto.BurnoutScore ?? 0f,
         Mental_health_index = dto.MentalHealthIndex ?? 0f,
-        Risk_level = dto.RiskLevel ?? string.Empty
     };
 }

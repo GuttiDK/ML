@@ -35,7 +35,7 @@ Systemet giver fagpersonale et datadrevet beslutningsgrundlag, så de proaktivt 
 **Kilde:** [Kaggle - Student Mental Health and Burnout](https://www.kaggle.com/datasets/sharmajicoder/student-mental-health-and-burnout)
 
 ### Datasætbeskrivelse
-Datasættet indeholder 2800+ elevobservationer med følgende nøgleindikatorer:
+Datasættet indeholder 999.999+ elevobservationer med følgende nøgleindikatorer:
 
 **Demografiske data:**
 - Alder

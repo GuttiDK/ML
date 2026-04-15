@@ -4,9 +4,7 @@ using ML_MLTraining;
 
 namespace ML.MLWebApi.Services;
 
-// ─────────────────────────────────────────────
 // BurnoutScore — Classification → float label
-// ─────────────────────────────────────────────
 public class BurnoutScoreService : IMLPredictionService<
     MLBurnoutScore.ModelInput,
     MLBurnoutScore.ModelOutput,
@@ -56,9 +54,7 @@ public class BurnoutScoreService : IMLPredictionService<
     };
 }
 
-// ─────────────────────────────────────────────
 // MentalHealth — Classification → float label
-// ─────────────────────────────────────────────
 public class MentalHealthService : IMLPredictionService<
     MLMentalHealth.ModelInput,
     MLMentalHealth.ModelOutput,
@@ -108,9 +104,7 @@ public class MentalHealthService : IMLPredictionService<
     };
 }
 
-// ─────────────────────────────────────────────
 // DropoutRisk — Regression → float score
-// ─────────────────────────────────────────────
 public class DropoutRiskService : IMLPredictionService<
     MLDropoutRisk.ModelInput,
     MLDropoutRisk.ModelOutput,

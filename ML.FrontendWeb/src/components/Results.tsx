@@ -7,9 +7,9 @@ interface ResultsProps {
 }
 
 const RESULT_ITEMS = [
-  { icon: '🔥', label: 'Burnout Score', key: 'burnoutScore' as const },
-  { icon: '🧠', label: 'Mental Health Index', key: 'mentalHealthIndex' as const },
-  { icon: '📉', label: 'Dropout Risk', key: 'dropoutRisk' as const },
+  { label: 'Burnout Score', key: 'burnoutScore' as const },
+  { label: 'Mental Health Index', key: 'mentalHealthIndex' as const },
+  { label: 'Dropout Risk', key: 'dropoutRisk' as const },
 ];
 
 export function Results({ output, onStartOver }: ResultsProps) {
@@ -21,7 +21,6 @@ export function Results({ output, onStartOver }: ResultsProps) {
           {RESULT_ITEMS.map((item) => (
             <ResultCard
               key={item.key}
-              icon={item.icon}
               label={item.label}
               value={output[item.key]}
             />

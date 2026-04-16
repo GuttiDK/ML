@@ -6,10 +6,9 @@ namespace ML.MLWebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PredictController : ControllerBase
+    public class PredictController(IPredictService predictService) : ControllerBase
     {
-        private readonly IPredictService _predictService;
-        public PredictController(IPredictService predictService) => _predictService = predictService;
+        private readonly IPredictService _predictService = predictService;
 
         [HttpGet]
         [ProducesResponseType(typeof(ModelOutput), 200)]

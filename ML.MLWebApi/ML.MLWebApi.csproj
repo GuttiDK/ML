@@ -13,8 +13,8 @@
   <ItemGroup>
     <ProjectReference Include="..\ML.MLTraining\ML.MLTraining.csproj" />
   </ItemGroup>
-  <ItemGroup Label="MLModel1">
-    <None Include="..\ML.MLTraining\MLModel1.mlnet" Link="MLModel1.mlnet">
+  <ItemGroup Label="StudentHealth Models">
+    <None Include="..\ML.MLTraining\StudentHealth\*.mlnet" Link="Models\%(Filename)%(Extension)">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
